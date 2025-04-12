@@ -4,7 +4,7 @@
 #include <unordered_map>
 using namespace std;
 class Node
-{
+{ // This class is the node class for defining the data type of a graph.
 public:
     int val;
     vector<Node *> neighbors;
@@ -27,7 +27,7 @@ public:
 };
 
 class Solution
-{
+{ // bfs algorithm to traverse in the graph. The bfs algorith uses the queue approach.
 public:
     void bfs(Node *node)
     {

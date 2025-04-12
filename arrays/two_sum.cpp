@@ -10,6 +10,7 @@ class Solution
 public:
     void optimal(vector<int> nums, int target)
     {
+        // optimal approach is using hashmap
         vector<int> output;
         unordered_map<int, int> _map;
         cout << "Result using unordered_set:" << endl;
@@ -29,6 +30,7 @@ public:
 
     void goodApproach(vector<int> nums, int target)
     {
+        // This can also be a good approach by using the find function of vector class
         vector<int> result;
         for (auto it1 = nums.begin(); it1 != nums.end(); ++it1)
         {
@@ -50,7 +52,7 @@ public:
 
     void sortedArray(vector<int> &nums, int target)
     {
-        // two pointer approach
+        // two pointer approach and it works only for sorted arrays. This approach cannot be implemented for unsorted ones.
         int slow = 0, fast = nums.size() - 1;
         cout << "Solution using two pointers for a sorted array" << endl;
         while (slow < fast)

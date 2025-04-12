@@ -1,5 +1,4 @@
-// Solved the decode ways question on leetcode.
-
+// Solved the decode ways question on leetcode where we find the number of ways a string can be decoded. We have used the concept of dynamic programming.
 #include <iostream>
 #include <string>
 using namespace std;
