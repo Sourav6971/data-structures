@@ -46,7 +46,29 @@ public:
         result_node->next = createSum(n1->next, n2->next, new_carry);
         return result_node;
     }
+    Node *optimalApproach(Node *n1, Node *n2)
+    {
+        if (n1 == nullptr && n2 == nullptr)
+            return nullptr;
+        int carry = 0;
+        Node *dummy = new Node();
+        Node *temp = dummy;
 
+        while (n1 != nullptr || n2 != nullptr || carry != 0)
+        {
+            int val1 = n1 != nullptr ? n1->val : 0;
+            int val2 = n2 != nullptr ? n2->val : 0;
+
+            int sum = val1 + val2 + carry;
+            int new_sum = sum % 10;
+            carry = sum / 10;
+            temp->next = new Node(new_sum);
+            temp = temp->next;
+            n1 = n1->next != nullptr ? n1->next : nullptr;
+            n2 = n2->next != nullptr ? n2->next : nullptr;
+        }
+        return dummy->next;
+    }
     void printList(Node *list)
     {
         while (list != nullptr)
@@ -69,6 +91,7 @@ int main()
 
     Solution sol;
 
-    Node *sumNode = sol.addTwoNumbers(n1, n2);
+    // Node *sumNode = sol.addTwoNumbers(n1, n2);
+    Node *sumNode = sol.optimalApproach(n1, n2);
     sol.printList(sumNode);
 }
