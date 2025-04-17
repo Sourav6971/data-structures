@@ -20,6 +20,7 @@ public:
             {
                 curr_length = 0;
                 i = check[c];
+                // start the iteration again from the point where the similarity was first found
                 check.clear();
             }
             else
