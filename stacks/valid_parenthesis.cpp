@@ -27,7 +27,7 @@ public:
                     else
                         stk.pop();
                     break;
-                }
+                };
                 case '}':
                 {
                     if (stk.top() != '{')
@@ -35,7 +35,7 @@ public:
                     else
                         stk.pop();
                     break;
-                }
+                };
                 case ')':
                 {
                     if (stk.top() != '(')
@@ -43,19 +43,19 @@ public:
                     else
                         stk.pop();
                     break;
-                }
+                };
                 }
             }
-            if (stk.size() == 0)
-                return true;
         }
+        if (stk.size() == 0)
+            return true;
         return false;
     }
 };
 
 int main()
 {
-    string s = "{[)]}";
+    string s = "{}[]";
     Solution sol;
     cout << sol.validParenthesis(s) << endl;
 }
