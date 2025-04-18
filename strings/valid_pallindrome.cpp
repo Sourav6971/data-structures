@@ -1,4 +1,4 @@
-// Solution to the leetcode problem to check if a sentence is pallindrome or not,
+// Solution to the leetcode problem to check if a sentence is pallindrome or not, considering only the aplhabets and digits.
 
 #include <iostream>
 #include <string>
@@ -17,6 +17,7 @@ public:
                 s1 += c;
         }
         transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
+        // transform function is present in the algorithm library helps us to convert a string to lower case or upper case
         int slow = 0;
         int fast = s1.length() - 1;
         while (slow < fast)
